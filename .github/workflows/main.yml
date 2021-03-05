@@ -24,8 +24,14 @@ jobs:
           curl -LJO https://github.com/ytdl-org/youtube-dl/releases/latest/download/youtube-dl
           chmod +x ./youtube-dl
           ./youtube-dl --config-location dl.conf
-          
-      - name: GH Release
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: upload_videos
+          path: downloads/
+
+      - name: Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
