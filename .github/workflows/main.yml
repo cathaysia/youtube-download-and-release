@@ -18,12 +18,11 @@ jobs:
       - name: download
         run: |
           sudo apt-get update
-          sudo apt-get install ffmpeg curl rar -y
+          sudo apt-get install ffmpeg curl rar python3 -y
           curl -LJO https://github.com/ytdl-org/youtube-dl/releases/latest/download/youtube-dl
           chmod +x ./youtube-dl
           ./youtube-dl --config-location dl.conf
-          mkdir result
-          rar a -v1.5g result/sub.rar downloads
+          python3 ./deal_download_files.py
 
 
       - name: Release
