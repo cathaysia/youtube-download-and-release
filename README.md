@@ -37,3 +37,10 @@ Fork 这个仓库并将 dl.conf 修改为你需要下载的视频的 URL，一�
 # 注意
 
 如果你已经下载完视频了，不要忘记把 realses 中的视频给删掉。请 *善意* 使用 Github 给出的免费空间。
+
+# 鸣谢
+
+- 感谢 Github 对 Action 和 Release 宽松的限制，使得本项目可以实现
+- 感谢 Youtobe-dl 提供的下载器，使得我们可以使用 Youtobe-dl 去下载喜欢的视频
+- 感谢 marvinpinto 提供的 workflow 脚本，使我可以便捷地上传多个 assets
+- 感谢 Rar 提供的软件，使我简化了分卷压缩包的创建
