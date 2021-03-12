@@ -28,15 +28,19 @@ https://docs.github.com/en/actions/using-github-hosted-runners/about-github-host
 
 # 使用
 
-Fork 这个仓库并将 dl.conf 修改为你需要下载的视频的 URL，一个 URL 占一行。
+Fork 这个仓库并将 dl.conf 修改为你需要下载的视频的 URL，一个 URL 占一行。修改后提交，然后在 Github Actions 里查看下载情况，每次 push 会创建一个 Action。
 
 一次下载的视频总大小不得超过 14GB。
 
 如果你只需要下载字幕，可以手动将 dl.conf 中的 `--write-auto-sub` 取消注释
 
+每个视频会被放到一个单独的压缩包里，主要是 Action 上传时会更改文件名，使用压缩包是为了保护文件名。
+
 # 注意
 
-如果你已经下载完视频了，不要忘记把 realses 中的视频给删掉。请 *善意* 使用 Github 给出的免费空间。
+1. 如果你已经下载完视频了，不要忘记把 realses 中的视频给删掉。请 *善意* 使用 Github 给出的免费空间。
+2. 视频的下载和字幕的下载是分离的，Action 会尝试下载所有可用的字幕文件并打包在 sub.rar 文件中。如果没有字幕文件，会创建一个 64B 大小的空 rar 文件
+3. Release 文件的上传是分多次的，所以 Release 刚刚创建的时候文件可能还没有上传完，最好等到 Action 结束再去下载
 
 # 鸣谢
 
