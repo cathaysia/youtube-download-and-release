@@ -12,6 +12,16 @@ Fork this repo and modify dl.conf as the url of videos you need download**s**. O
 
 Notice: the disk space of your videos must less than 14GB.
 
+# Caution
+
+1. If you want compound subtitle and video, the srt file's content must like this: (subtitle file encoding is UTF-8 witout BOM)
+
+```
+1
+00:00:01.120 --> 00:00:09.220
+Never, ever give up learning English, unless
+```
+
 # IMPORTANT
 
 If you had downloaded all the videos, please remove releases, give github more space for others.
@@ -41,6 +51,13 @@ Fork 这个仓库并将 dl.conf 修改为你需要下载的视频的 URL，一�
 1. 如果你已经下载完视频了，不要忘记把 realses 中的视频给删掉。请 *善意* 使用 Github 给出的免费空间。
 2. 视频的下载和字幕的下载是分离的，Action 会尝试下载所有可用的字幕文件并打包在 sub.rar 文件中。如果没有字幕文件，会创建一个 64B 大小的空 rar 文件
 3. Release 文件的上传是分多次的，所以 Release 刚刚创建的时候文件可能还没有上传完，最好等到 Action 结束再去下载
+4. 如果你想要使用 ffmpeg 将视频和字幕合成，那么你需要将字幕文件修改成下面这种形式：（字幕编码为 UTF-8 without BOM）
+
+```
+1
+00:00:01.120 --> 00:00:09.220
+Never, ever give up learning English, unless
+```
 
 # 鸣谢
 
